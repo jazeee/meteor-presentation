@@ -1,21 +1,48 @@
-Session.setDefault("counter", 0)
-
-Template.clickCounter.helpers(
-	counter: -> Session.get("counter");
-	clickCounters: -> Models.Clicks.find()
+Router.route('/'
+	waitOn: ->
+		return [
+			Meteor.subscribe('clicks')
+		]
+	data: ->
+		return {
+			clickCounters: Models.Clicks.find()
+		}
+	template: "clickCounters" 
+	controller: 'Controllers.BaseController'
 )
 
-Template.clickCounter.events(
+Router.route('/click-counters/:_id'
+	waitOn: ->
+		return [
+			Meteor.subscribe('clicks')
+		]
+	data: -> Models.Clicks.findOne(@.params._id)
+	template: "clickCounter" 
+	controller: 'Controllers.BaseController'
+)
+
+Session.setDefault("counter", 0)
+
+Template.clickCounters.helpers(
+	counter: -> Session.get("counter");
+)
+
+Template.clickCounters.events(
 	'click button': (event) ->
 		Session.set("counter", Session.get("counter") + 1)
 	
-	'click .increment-count': (event) ->
+	'mousedown .increment-count': (event) ->
 		event.preventDefault()
-		count = @count + 1
-		Models.Clicks.update(@_id, {
-			$set:
-				{count}
-		})
+		switch event.which
+			when 1 #left mouse
+				count = @count + 1
+				Models.Clicks.update(@_id, {
+					$set:
+						{count}
+				})
+			when 2, 3
+				console.log @_id
+				Router.go("/click-counters/#{@_id}")
 	
 	'click .add-new-click-counter': (event) ->
 		event.preventDefault()
@@ -25,4 +52,14 @@ Template.clickCounter.events(
 		event.preventDefault()
 		for i in [1..20]
 			Models.Clicks.insert({count: i})
+)
+
+Template.clickCounter.events(
+	"click .increment-count": (event) ->
+		event.preventDefault()
+		count = @count + 1
+		Models.Clicks.update(@_id, {
+			$set:
+				{count}
+		})
 )
