@@ -1,0 +1,1 @@
+Models.clicks = new Mongo.Collection('clicks')

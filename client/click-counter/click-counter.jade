@@ -1,0 +1,9 @@
+template(name="clickCounter")
+	button Click Me
+
+	p You&apos;ve pressed a button {{counter}} times.
+	
+	each clickCounters
+		button.increment-count {{count}}
+	button.add-new-click-counter Add Click Counter
+	button.add-20-new-click-counters Add 20 Click Counters
