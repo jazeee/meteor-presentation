@@ -1,4 +1,5 @@
-Router.route('/'
+Router.route('/click-counters'
+	name: "clickCounters" 
 	waitOn: ->
 		return [
 			Meteor.subscribe('clicks')
@@ -7,7 +8,6 @@ Router.route('/'
 		return {
 			clickCounters: Models.Clicks.find()
 		}
-	template: "clickCounters" 
 	controller: 'Controllers.BaseController'
 )
 
