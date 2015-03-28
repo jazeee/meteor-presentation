@@ -10,3 +10,5 @@ coffeescript
 less
 iron:router
 sacha:spin
+underscore
+nemo64:bootstrap
