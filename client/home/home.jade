@@ -1,0 +1,19 @@
+template(name="home")
+	.container
+		.well
+			.col-sm-8
+				h1 Click Counter Demo
+				p Code to read and write reactively to the database.
+			.col-sm-4
+				a.btn.btn-primary.btn-lg(a href="{{pathFor 'clickCounters'}}") Click Counters
+			.clearfix
+		.well
+			.col-sm-4
+				h1 Log in Demo
+				p Code to log in reactively.
+			.col-sm-4
+				if currentUser
+					h2 Currently logged in
+			.col-sm-4
+				+loginButtons
+			.clearfix
