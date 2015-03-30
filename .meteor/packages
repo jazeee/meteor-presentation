@@ -12,3 +12,5 @@ iron:router
 sacha:spin
 underscore
 nemo64:bootstrap
+accounts-ui
+accounts-password
