@@ -21,15 +21,6 @@ Router.route('/blogs/:_id'
 	controller: 'Controllers.BaseController'
 )
 
-Router.route('/newBlog'
-	name: "newBlog"
-	waitOn: ->
-		return [
-			Meteor.subscribe('blogs')
-		]
-	controller: 'Controllers.BaseController'
-)
-
 Template.blog.helpers(
 	isOwner: ->
 		@userId == Meteor.userId()
