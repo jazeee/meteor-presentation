@@ -12,8 +12,3 @@ Rules.allowInsertElseRestrictToOwner =
 	insert: (userId, document) -> true
 	update: doesUserOwnDocument
 	remove: doesUserOwnDocument
-
-Rules.restrictToOwner =
-	insert: doesUserOwnDocument
-	update: doesUserOwnDocument
-	remove: doesUserOwnDocument

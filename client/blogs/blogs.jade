@@ -1,0 +1,49 @@
+template(name="blogs")
+	.blogs
+		.container
+			+loginButtons
+			each blogs
+				.well
+					+blog this
+			a.btn.btn-primary.create-new-blog(data-toggle="modal" data-target="#blogEditorModal") New
+	.modal.fade.in(
+			id="blogEditorModal"
+			role="dialog"
+			aria-labelledby="blogEditorModal"
+			area-hidden="true"
+		)
+			+blogEditorModal blogEditorModalData
+
+template(name="blog")
+	.blog
+		h1 {{title}}
+		+markdown
+			{{markdownText}}
+		if isOwner
+			a.btn.btn-primary.edit-blog(data-toggle="modal" data-target="#blogEditorModal") Edit
+
+template(name="blogEditorModal")
+	.modal-dialog
+		.modal-content
+			.modal-header
+				button.close.close-modal(
+					type="button"
+					data-dismiss="modal"
+				)
+					span(aria-hidden="true") &times;
+				h4.modal-title 
+					if blog
+						| Edit Blog
+					else
+						| New Blog
+				+autoForm collection="Models.Blogs" id="blogForm" type=autoformType doc=blog
+					+afQuickField name='title'
+					.row
+						.col-sm-6
+							+afQuickField name="markdownText" id="markdown" class="blog-markdown"
+						.col-sm-6
+							label.control-label Blog Preview
+							+markdown
+								{{blogEditorPreviewMarkdown}}
+					button.btn.btn-primary( type="submit" ) {{autoformType}}
+				

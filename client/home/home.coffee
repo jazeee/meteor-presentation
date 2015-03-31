@@ -1,5 +1,5 @@
 Router.route('/'
-	name: "home" 
+	name: "home"
 	waitOn: ->
 		return [
 			Meteor.subscribe('clicks')

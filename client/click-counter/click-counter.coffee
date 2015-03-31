@@ -1,5 +1,5 @@
 Router.route('/click-counters'
-	name: "clickCounters" 
+	name: "clickCounters"
 	waitOn: ->
 		return [
 			Meteor.subscribe('clicks')
@@ -17,7 +17,7 @@ Router.route('/click-counters/:_id'
 			Meteor.subscribe('clicks')
 		]
 	data: -> Models.Clicks.findOne(@.params._id)
-	template: "clickCounter" 
+	template: "clickCounter"
 	controller: 'Controllers.BaseController'
 )
 
@@ -30,7 +30,7 @@ Template.clickCounters.helpers(
 Template.clickCounters.events(
 	'click button': (event) ->
 		Session.set("counter", Session.get("counter") + 1)
-	
+
 	'mousedown .increment-count': (event) ->
 		event.preventDefault()
 		switch event.which
@@ -43,11 +43,11 @@ Template.clickCounters.events(
 			when 2, 3
 				console.log @_id
 				Router.go("/click-counters/#{@_id}")
-	
+
 	'click .add-new-click-counter': (event) ->
 		event.preventDefault()
 		Models.Clicks.insert({count: 0})
-		
+
 	'click .add-20-new-click-counters': (event) ->
 		event.preventDefault()
 		for i in [1..20]
