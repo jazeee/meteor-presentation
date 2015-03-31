@@ -16,11 +16,16 @@ template(name="blogs")
 
 template(name="blog")
 	.blog
-		h1 {{title}}
-		+markdown
-			{{markdownText}}
-		if isOwner
-			a.btn.btn-primary.edit-blog(data-toggle="modal" data-target="#blogEditorModal") Edit
+		.col-sm-9
+			h1 {{title}}
+			+markdown
+				{{markdownText}}
+		.col-sm-3
+			if isOwner
+				a.btn.btn-primary.edit-blog(data-toggle="modal" data-target="#blogEditorModal") Edit
+				a.btn.btn-primary.delete-blog Delete
+			p {{formatDate dates.updatedAt}}
+		.clearfix
 
 template(name="blogEditorModal")
 	.modal-dialog
