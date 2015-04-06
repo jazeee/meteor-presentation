@@ -1,6 +1,5 @@
 doesUserOwnDocument = (userId, document) ->
-	isOwned = (document.user?.userId == userId)
-	isOwned |= document.userId == userId
+	isOwned = document.userId == userId
 	return userId? && isOwned
 
 Rules.allowAll =
@@ -12,3 +11,5 @@ Rules.allowInsertElseRestrictToOwner =
 	insert: (userId, document) -> true
 	update: doesUserOwnDocument
 	remove: doesUserOwnDocument
+
+# Models.Blogs.allow(Rules.allowInsertElseRestrictToOwner)
