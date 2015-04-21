@@ -22,14 +22,21 @@ Router.route('/click-counters/:_id'
 )
 
 Session.setDefault("counter", 0)
+Session.setDefault("numberOfClickCountersToAdd", 20)
 
 Template.clickCounters.helpers(
 	counter: -> Session.get("counter");
+	numberOfClickCountersToAdd: -> Session.get("numberOfClickCountersToAdd")
 )
 
 Template.clickCounters.events(
 	'click button': (event) ->
 		Session.set("counter", Session.get("counter") + 1)
+
+	'change #number-of-click-counters-to-add': (event) ->
+		event.preventDefault()
+		clickCountersToAdd = Number($(event.currentTarget).val())
+		Session.set("numberOfClickCountersToAdd", clickCountersToAdd)
 
 	'mousedown .increment-count': (event) ->
 		event.preventDefault()
@@ -48,9 +55,9 @@ Template.clickCounters.events(
 		event.preventDefault()
 		Models.Clicks.insert({count: 0})
 
-	'click .add-20-new-click-counters': (event) ->
+	'click .add-many-new-click-counters': (event) ->
 		event.preventDefault()
-		for i in [1..20]
+		for i in [1..Session.get("numberOfClickCountersToAdd")]
 			Models.Clicks.insert({count: i})
 )
 

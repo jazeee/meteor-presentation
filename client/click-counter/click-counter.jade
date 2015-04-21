@@ -3,10 +3,13 @@ template(name="clickCounters")
 
 	p You&apos;ve pressed a button {{counter}} times.
 	
+	h2 Click Counters
 	each clickCounters
 		button.increment-count {{count}}
 	button.add-new-click-counter Add Click Counter
-	button.add-20-new-click-counters Add 20 Click Counters
+
+	input#number-of-click-counters-to-add(type="number" value="{{numberOfClickCountersToAdd}}")
+	button.add-many-new-click-counters Add {{numberOfClickCountersToAdd}} Click Counters
 
 template(name="clickCounter")
 	h1 One Click Counter
