@@ -41,7 +41,8 @@ Template.blogs.events =
 	"click .create-new-blog": (event) ->
 		event.preventDefault()
 		blogEditorModalData.set(
-			blog: null
+			blog:
+				title: "New Blog"
 			autoformType: "insert"
 		)
 		blogEditorPreviewMarkdown.set()
