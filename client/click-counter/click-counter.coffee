@@ -8,7 +8,7 @@ Template.clickCounter.helpers(
 Template.clickCounter.events(
 	'click button': (event) ->
 		Session.set("counter", Session.get("counter") + 1)
-	
+
 	'click .increment-count': (event) ->
 		event.preventDefault()
 		count = @count + 1
@@ -16,11 +16,11 @@ Template.clickCounter.events(
 			$set:
 				{count}
 		})
-	
+
 	'click .add-new-click-counter': (event) ->
 		event.preventDefault()
 		Models.Clicks.insert({count: 0})
-		
+
 	'click .add-20-new-click-counters': (event) ->
 		event.preventDefault()
 		for i in [1..20]
