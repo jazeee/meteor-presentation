@@ -1,7 +1,7 @@
 template(name="clickCounter")
-	button Click Me
+	button.simple-click-button Click Me
 
-	p You&apos;ve pressed the above button {{counter}} times since last reload.
+	p You&apos;ve pressed the above or below buttons: {{counter}} times since last reload.
 	
 	each clickCounters
 		button.increment-count {{count}}
