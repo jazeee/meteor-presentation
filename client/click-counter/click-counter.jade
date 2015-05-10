@@ -1,7 +1,9 @@
 template(name="clickCounters")
 	button Click Me
 
-	p You&apos;ve pressed a button {{counter}} times.
+	p You&apos;ve pressed a click button {{counter}} times.
+	
+	h2 Middle or RightClick on a click counter to open its URL.
 	
 	each clickCounters
 		button.increment-count {{count}}
