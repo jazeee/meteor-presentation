@@ -3,7 +3,9 @@ template(name="clickCounters")
 
 	p You&apos;ve pressed a click button {{counter}} times.
 	
-	h2 Middle or RightClick on a click counter to open its URL.
+	.instructions
+		h2 Middle or RightClick on a click counter to open its URL.
+		button.resetClickCounters Reset
 	
 	each clickCounters
 		button.increment-count(class="{{getClass}}") {{count}}

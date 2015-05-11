@@ -58,6 +58,10 @@ Template.clickCounters.events(
 		event.preventDefault()
 		for i in [1..20]
 			Models.Clicks.insert({count: i})
+
+	'click .resetClickCounters': (event) ->
+		event.preventDefault()
+		Meteor.call("resetClickCounters")
 )
 
 Template.clickCounter.events(
