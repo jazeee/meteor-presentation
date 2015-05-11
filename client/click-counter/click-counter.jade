@@ -3,6 +3,9 @@ template(name="clickCounter")
 
 	p You&apos;ve pressed the above or below buttons: {{counter}} times since last reload.
 	
+	.instructions
+		button.resetClickCounters Reset
+	
 	each clickCounters
 		button.increment-count(class="{{getClass}}") {{count}}
 	button.add-new-click-counter Add Click Counter
