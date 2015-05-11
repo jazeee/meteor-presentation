@@ -29,12 +29,12 @@ Visit http://localhost:3010
 
 Increment Tags
 
-    git checkout -b 01 01-add-database-model-insecure-2
-    git checkout -b 02 02-add-database-model-4
-    git checkout -b 05 05-added-iron-router-removed-autopublish-5
-    git checkout -b 08 08-add-accounts-and-bootstrap-5
-    git checkout -b 10 10-add-autoform-schema-moment-for-blog-3 
-    git checkout -b 12 12-added-input-for-number-of-click-counters-5
+    git checkout -b 01 01-add-database-model-insecure-3
+    git checkout -b 02 02-add-database-model-5
+    git checkout -b 05 05-added-iron-router-removed-autopublish-6
+    git checkout -b 08 08-add-accounts-and-bootstrap-6
+    git checkout -b 10 10-add-autoform-schema-moment-for-blog-4 
+    git checkout -b 12 12-added-input-for-number-of-click-counters-6
 
 See Meteor Update
     
