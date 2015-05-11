@@ -47,8 +47,7 @@ minimongo@1.0.7
 mobile-status-bar@1.0.3
 momentjs:moment@2.10.3
 mongo@1.1.0
-mquandalle:jade@0.4.3
-mquandalle:jade-compiler@0.4.3
+mquandalle:jade@0.4.1
 nemo64:bootstrap@3.3.4_2
 nemo64:bootstrap-data@3.3.4_1
 npm-bcrypt@0.7.8_1
