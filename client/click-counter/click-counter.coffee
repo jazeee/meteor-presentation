@@ -23,8 +23,13 @@ Router.route('/click-counters/:_id'
 
 Session.setDefault("counter", 0)
 
+loadedDate = new Date()
+
 Template.clickCounters.helpers(
 	counter: -> Session.get("counter");
+	getClass: ()->
+		if @date >= loadedDate
+			"newly-clicked"
 )
 
 Template.clickCounters.events(
@@ -36,9 +41,10 @@ Template.clickCounters.events(
 		switch event.which
 			when 1 #left mouse
 				count = @count + 1
+				date = new Date()
 				Models.Clicks.update(@_id, {
 					$set:
-						{count}
+						{count, date}
 				})
 			when 2, 3
 				console.log @_id
@@ -58,8 +64,9 @@ Template.clickCounter.events(
 	"click .increment-count": (event) ->
 		event.preventDefault()
 		count = @count + 1
+		date = new Date()
 		Models.Clicks.update(@_id, {
 			$set:
-				{count}
+				{count, date}
 		})
 )
