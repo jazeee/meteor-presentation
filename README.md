@@ -34,9 +34,10 @@ Increment Tags
     git checkout -b 05 05-added-iron-router-removed-autopublish-3
     git checkout -b 08 08-add-accounts-and-bootstrap-4
     git checkout -b 10 10-add-autoform-schema-moment-for-blog-2 
+    git checkout -b 12 12-added-input-for-number-of-click-counters-4
 
 See Meteor Update
-
-    git checkout -b 12 12-added-input-for-number-of-click-counters
+    
+	meteor update
 	meteor --port 3010
 
