@@ -41,7 +41,7 @@ See Meteor Update
 	meteor update
 	meteor --port 3010
 
-[Meteor Questions Answered](#meteor-questions-answered)
+# Meteor Questions Answered
 
 ### How to use Meteor + Bootstrap:
 
