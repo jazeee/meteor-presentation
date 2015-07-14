@@ -5,3 +5,6 @@ if Meteor.server
 		resetMeetingGroup: ->
 			Models.Settings.remove({type: "meetingGroup"})
 	)
+
+	Meteor.startup ->
+		Models.Settings.allow(Rules.allowAll)
