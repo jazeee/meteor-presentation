@@ -25,7 +25,7 @@ You can run through this demo code:
 
     meteor --port 3010
 
-Visit [http://localhost:3010]
+Open app in [Browser](http://localhost:3010)
 
 ###Increment Tags
 
