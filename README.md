@@ -4,39 +4,40 @@ See [Presentation] (https://docs.google.com/presentation/d/18hfoQmwRLck6PjhKBw0-
 
 You can run through this demo code:
 
-Install Meteor
+###Install Meteor
 
     curl https://install.meteor.com/ | sh
 
-Get Code
+###Get Code
 
     git clone https://github.com/jazeee/meteor-presentation.git
     cd meteor-presentation
 
-See Tags
+###See Branches
 
-    git tag
+    git branch
 
-Checkout Tag
+###Checkout Initial Branch
 
-    git checkout -b 00 00-init-state-1
+    git checkout 00-init-state
 
-Start Meteor
+###Start Meteor
 
     meteor --port 3010
 
-Visit http://localhost:3010
+Visit [http://localhost:3010]
 
-Increment Tags
+###Increment Tags
 
-    git checkout -b 01 01-add-database-model-insecure-3
-    git checkout -b 02 02-add-database-model-5
-    git checkout -b 05 05-added-iron-router-removed-autopublish-6
-    git checkout -b 08 08-add-accounts-and-bootstrap-6
-    git checkout -b 10 10-add-autoform-schema-moment-for-blog-4 
-    git checkout -b 12 12-added-input-for-number-of-click-counters-6
+    git checkout 01-add-database-model-insecure
+    git checkout 02-add-database-model
+    git checkout 05-added-iron-router-removed-autopublish
+    git checkout 08-add-accounts-and-bootstrap
+    git checkout 10-add-autoform-schema-moment-for-blog
+    git checkout 12-added-input-for-number-of-click-counters
 
-See Meteor Update
+###Try Meteor Update
+
     
 	meteor update
 	meteor --port 3010
@@ -63,7 +64,7 @@ This demo code uses a variant of the "Better way"
 ** On rare occasion, you may have issues with third party packages. 
 ** You should, of course, thoroughly test before publicly deploying.
 
-Regarding Deployment:
+### Regarding Deployment:
 
 * You can deploy (for testing purposes) on [meteor.com](http://meteortips.com/book/deployment/)
 * You can use [Meteor Up](https://github.com/arunoda/meteor-up)
