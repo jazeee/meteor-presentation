@@ -1,4 +1,16 @@
 body
-	h1 Welcome to the MadJS Meteor Presentation!
+	+appHeader
 	h3 By Jaz Singh
 	+clickCounter
+	
+template(name="appHeader")
+	.app-header
+		h1 Welcome to the 
+			if meetingGroup
+				span.meeting-group 
+					| {{meetingGroup.name}}
+			else
+				form#meeting-group
+					input(id="name" placeholder="insert your meeting group")
+			| Presentation
+				
