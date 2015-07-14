@@ -6,41 +6,55 @@ You can run through this demo code:
 
 ###Install Meteor
 
+```bash
     curl https://install.meteor.com/ | sh
+```
 
 ###Get Code
 
+```bash
     git clone https://github.com/jazeee/meteor-presentation.git
     cd meteor-presentation
+```
 
 ###See Branches
 
-    git branch
+```bash
+    git branch -a
+```
 
 ###Checkout Initial Branch
 
+```bash
     git checkout 00-init-state
+```
 
 ###Start Meteor
 
+```bash
     meteor --port 3010
+```
 
 Open app in [Browser](http://localhost:3010)
 
-###Increment Tags
+###Increment Branches 
 
+```bash
     git checkout 01-add-database-model-insecure
     git checkout 02-add-database-model
     git checkout 05-added-iron-router-removed-autopublish
     git checkout 08-add-accounts-and-bootstrap
     git checkout 10-add-autoform-schema-moment-for-blog
+    # The next one is just for performance testing
     git checkout 12-added-input-for-number-of-click-counters
+```
 
 ###Try Meteor Update
 
-    
+```bash
 	meteor update
 	meteor --port 3010
+```
 
 # Meteor Questions Answered
 
